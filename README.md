@@ -1,4 +1,4 @@
-**MFA (Multi-Factor Authentication) with Server-Side**
+**MFA (Multi-Factor Authentication) on Server-Side**
 
 This project implements a basic Multi-Factor Authentication (MFA) system using Node.js. The MFA system is verified using Google Authenticator.
 
