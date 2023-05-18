@@ -11,8 +11,7 @@ const speakeasy = require('speakeasy');
 const secret = speakeasy.generateSecret({ length: 20 });
 
 // Generate a QR code for the user to scan //`<img src="${qrCodeUrl}" alt="QR Code">`
-exports.qr = async (req) => {
-    console.log("Inside qr service..")
+exports.qr = async () => {
     const deferred = Q.defer();
     const qrCodeUrl = await qrcode.toDataURL(secret.otpauth_url);
     deferred.resolve({
@@ -24,7 +23,6 @@ exports.qr = async (req) => {
 
 // Verify the user's OTP
 exports.verify = async (req) => {
-    console.log("Inside verify")
     const deferred = Q.defer();
     const token = req.body.token;
     const verified = speakeasy.totp.verify({

@@ -1,7 +1,7 @@
 const mfaService = require("../services/mfaService");
 
 exports.qr = async (req, res) => {
-    mfaService.qr(req).then(function (result) {
+    mfaService.qr().then(function (result) {
         res.status(200).send(result)
     })
         .catch(err => {
